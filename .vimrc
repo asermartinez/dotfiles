@@ -4,10 +4,7 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'dracula/vim'
@@ -16,22 +13,13 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'tomtom/tcomment_vim'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-" Molokai color
+syntax on
 
 " Automatic reload of .vimrc when saving
 autocmd! bufwritepost .vimrc source %
@@ -42,11 +30,38 @@ colo molokai
 " Set powerline theme
 let g:airline_theme='badwolf' 
 
-" Set cursor line highlight
-set cul
+set t_Co=256 "Set colors for tmux
+
+set cul " Set cursor line highlight
+set number
+set wrapmargin=8
+set linebreak " Break lines but not words
+set nolist " Not showing invisble characters
+
+" Make search case insensitive
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+"###############################################################################
+" YouCompleteMe Settings
+"###############################################################################
+let g:ycm_python_binary_path = 'python3'
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_min_num_of_chars_for_completion = 1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+"###############################################################################
+set textwidth=79  " lines longer than 79 columns will be broken
+set shiftwidth=4  " operation >> indents 4 columns; << unindents 4 columns
+set tabstop=4     " a hard TAB displays as 4 columns
+set expandtab     " insert spaces when hitting TABs
+set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
+set shiftround    " round indent to multiple of 'shiftwidth'
+set autoindent    " align the new line indent with the previous line
 
 " Unmap the arrow keys
-
 no <down> <Nop>
 no <left> <Nop>
 no <right> <Nop>
@@ -56,10 +71,6 @@ ino <down> <Nop>
 ino <left> <Nop>
 ino <right> <Nop>
 ino <up> <Nop>
-
-set number
-
-set wrapmargin=8
 
 " Select All
 map <C-a> <ESC>ggVG
@@ -102,23 +113,3 @@ map tc :tabc<CR>
 " Better moving of code blocks
 vnoremap < <gv
 vnoremap > >gv
-
-"Set colors for tmux
-set t_Co=256
-
-" Real programmer don't use TABs but spaces
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set shiftround
-set expandtab
-
-" Make search case insensitive
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-
-" YouCompleteMe
-let g:ycm_python_binary_path = '/usr/bin/python3'
-let g:ycm_server_python_interpreter = '/usr/bin/python3'
