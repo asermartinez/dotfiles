@@ -1,4 +1,12 @@
-set nocompatible              " be iMproved, required
+
+" Pathogen load
+filetype off
+
+call pathogen#infect()
+call pathogen#helptags()
+
+filetype plugin indent on
+syntax on
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -26,13 +34,18 @@ Plugin 'honza/vim-snippets'
 " let g:UltiSnipsJumpForwardTrigger="<CR>"
 " let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 syntax on
+
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+
+" Python-mode
+let g:pymode_python = 'python'
 
 " Automatic reload of .vimrc when saving
 autocmd! bufwritepost .vimrc source %
@@ -67,7 +80,7 @@ set smartcase
 "###############################################################################
 " YouCompleteMe Settings
 "###############################################################################
-let g:ycm_python_binary_path = 'python3'
+let g:ycm_python_binary_path = '/usr/bin/python3'
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_min_num_of_chars_for_completion = 1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -155,3 +168,5 @@ let g:UltiSnipsExpandTrigger="<Tab>"
 let g:UltiSnipsJumpForwardTrigger="<Tab>" 
 let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
+" Disable search highlight
+nnoremap <leader><space> :noh<cr>
