@@ -1,4 +1,6 @@
-
+let g:airline_powerline_fonts = 1
+set guifont=Droid\ Sans\ Mono\ Nerd\ Font\ Complete\ 11
+set encoding=UTF-8
 " Pathogen load
 filetype off
 
@@ -22,7 +24,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tomtom/tcomment_vim'
-
+Plugin 'ryanoasis/vim-devicons'
 " Track the engine.
 Plugin 'SirVer/ultisnips'
 
@@ -45,16 +47,18 @@ let g:UltiSnipsEditSplit="vertical"
 
 
 " Python-mode
-let g:pymode_python = 'python'
+let g:pymode_python = 'python3'
 
 " Automatic reload of .vimrc when saving
 autocmd! bufwritepost .vimrc source %
 
 " Color Theme
-colo molokai	
+" colo molokai	
+colorscheme onedark	
 
 " Set powerline theme
 let g:airline_theme='badwolf' 
+" let g:airline_theme='onedark' 
 
 set t_Co=256 "Set colors for tmux
 set textwidth=79  " lines longer than 79 columns will be broken
@@ -170,3 +174,4 @@ let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
 " Disable search highlight
 nnoremap <leader><space> :noh<cr>
+
