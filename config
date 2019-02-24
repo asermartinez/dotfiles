@@ -274,3 +274,6 @@ exec --no-startup-id volumeicon
 
 # Enable Bluetooth applet
 exec --no-startup-id blueman-applet
+
+# Remove all title bars
+for_window [class="^.*"] border pixel 1
