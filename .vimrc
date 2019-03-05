@@ -115,9 +115,9 @@ map <C-s> :update<CR>
 
 imap <C-s> <esc> :update<CR>
 
-map <C-x> <esc>:wq<CR>
+" map <C-x> <esc>:wq<CR>
 
-imap <C-x> <esc>:wq<CR>
+" imap <C-x> <esc>:wq<CR>
 
 " Edit inside....
 imap <leader>' ''<ESC>i
@@ -175,3 +175,5 @@ let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 " Disable search highlight
 nnoremap <leader><space> :noh<cr>
 
+" Indent folding
+set foldmethod=indent
