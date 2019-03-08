@@ -199,6 +199,8 @@ bindsym $mod+n exec nautilus
 # Floating
 for_window [class="Nautilus"] floating enable
 
+for_window [class="(?i)gsimplecal"] floating enable
+
 # Gnome control center
 bindsym $mod+c exec env XDG_CURRENT_DESKTOP=GNOME gnome-control-center
 # Floating
