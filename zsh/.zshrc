@@ -3,7 +3,7 @@ export TERM="xterm-256color"
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/aser/.oh-my-zsh"
+export ZSH="/home/aser/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -12,19 +12,26 @@ export TERM="xterm-256color"
 # ZSH_THEME="agnoster"
 #ZSH_THEME="agnosterzak"
 POWERLEVEL9K_MODE="nerdfont-complete"
+# POWERLEVEL9K_COLOR_SCHEME='light'
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
-POWERLEVEL9K_DISABLE_RPROMPT=true
+# POWERLEVEL9K_DISABLE_RPROMPT=true
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=" ╰▸ "
+# POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=" ╰▸ "
 # POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="▸ "
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="  ▸"
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_ubuntu_icon virtualenv dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon virtualenv dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(host ip)
 
-POWERLEVEL9K_CUSTOM_UBUNTU_ICON="echo ╭"
-POWERLEVEL9K_CUSTOM_UBUNTU_ICON_BACKGROUND=069
-POWERLEVEL9K_CUSTOM_UBUNTU_ICON_FOREGROUND=015
+POWERLEVEL9K_DIR_HOME_FOREGROUND="white"
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="white"
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="white"
+
+# POWERLEVEL9K_CUSTOM_UBUNTU_ICON="echo ╭"
+# POWERLEVEL9K_CUSTOM_UBUNTU_ICON_BACKGROUND=069
+# POWERLEVEL9K_CUSTOM_UBUNTU_ICON_FOREGROUND=015
 
 
 # Set list of themes to pick from when loading at random
