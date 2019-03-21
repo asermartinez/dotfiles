@@ -132,7 +132,7 @@ source $ZSH/oh-my-zsh.sh
 # alias l='ls -CF'
 #
 alias ls='lsd'
-alias l='ls -a'
+alias l='ls'
 alias ll='ls -la'
 alias lt='ls --tree'
 
