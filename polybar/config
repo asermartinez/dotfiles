@@ -69,7 +69,7 @@ tray-padding = 1
 ;wm-restack = bspwm
 ; wm-restack = i3
 
-override-redirect = true
+override-redirect = false
 enable-ipc = true
 
 ;scroll-up = bspwm-desknext
@@ -515,7 +515,6 @@ screenchange-reload = true
 margin-top = 5
 margin-bottom = 5
 
-; vim:ft=dosini
 [module/changekey]
 type = custom/script
 
@@ -526,3 +525,7 @@ tail = false
 interval = 5
 click-right = setxkbmap -layout us 
 click-left = setxkbmap -layout es
+
+; vim:ft=dosini
+
+
