@@ -134,7 +134,9 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+bindsym $mod+Shift+e exec /home/aser/bin/rofi-logout.sh
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -265,7 +267,7 @@ floating_modifier $mod
 exec --no-startup-id redshift-gtk
 
 # Autolock in 10 minutes + warnign 30s. before
-exec xautolock --no-startup-id -time 10 -locker /home/aser/bin/lock.sh -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'"
+exec --no-startup-id xautolock -time 10 -locker /home/aser/bin/lock.sh -notify 40 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 40 seconds'"
 
 # Network Manager applet in status bar
 exec --no-startup-id nm-applet
@@ -287,7 +289,7 @@ for_window [class="^.*"] border pixel 1
 gaps inner 10
 gaps outer 10
 
-for_window [class="(?i)gsimplecal"] floating enable, move position mouse, move down 200 px
+for_window [class="(?i)gsimplecal"] floating enable, move position mouse, move down 25 px
  
 # Enable Bluetooth applet
 exec --no-startup-id /home/aser/bin/i3listener.py
