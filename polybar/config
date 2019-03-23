@@ -60,14 +60,14 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = i3
 modules-center = xwindow
-modules-right = filesystem pulseaudio xkeyboard memory cpu wlan eth battery temperature scriptdate powermenu
+modules-right = filesystem pulseaudio changekey xkeyboard memory cpu wlan eth battery temperature scriptdate powermenu
 
 tray-position = right
 tray-padding = 1
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
-wm-restack = i3
+; wm-restack = i3
 
 override-redirect = true
 enable-ipc = true
@@ -89,7 +89,7 @@ label = %title:0:30:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = " "
+; format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
 format-prefix-underline = ${colors.marrron}
 
@@ -516,3 +516,13 @@ margin-top = 5
 margin-bottom = 5
 
 ; vim:ft=dosini
+[module/changekey]
+type = custom/script
+
+exec = echo ""
+
+tail = false
+
+interval = 5
+click-right = setxkbmap -layout us 
+click-left = setxkbmap -layout es
