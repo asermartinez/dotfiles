@@ -516,16 +516,12 @@ margin-top = 5
 margin-bottom = 5
 
 [module/changekey]
-type = custom/script
-
-exec = echo ""
-
-tail = false
-
-interval = 5
-click-right = setxkbmap -layout us 
-click-left = setxkbmap -layout es
+type = custom/ipc
+hook-0 = echo 
+hook-1 = "setxkbmap -layout es"
+hook-2 = "setxkbmap -layout us"
+initial = 1
+click-left = polybar-msg hook changekey 2
+click-right = polybar-msg hook changekey 3
 
 ; vim:ft=dosini
-
-

@@ -92,6 +92,7 @@ plugins=(
   z
   autoenv
   vscode
+  zsh-syntax-highlighting
 )
 
 
@@ -138,10 +139,15 @@ alias lt='ls --tree'
 
 alias df='df -h'
 
+alias free='free -h'
+
 export PATH="/home/aser/.cargo/bin:/home/aser/.cargo/bin:/home/aser/.local/share/umake/bin:/home/aser/bin:/home/aser/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/aser/.vimpkg/bin"
 
 stty start '^-' stop '^-'
 
 setxkbmap -option caps:swapescape
 # if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
+if [[ -s '/etc/zsh_command_not_found' ]]; then
+  source '/etc/zsh_command_not_found'
+fi
 

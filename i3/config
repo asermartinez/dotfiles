@@ -290,6 +290,7 @@ gaps inner 10
 gaps outer 10
 
 for_window [class="(?i)gsimplecal"] floating enable, move position mouse, move down 25 px
+for_window [class="Gnome-calculator"] floating enable
  
 # Enable Bluetooth applet
 exec --no-startup-id /home/aser/bin/i3listener.py
